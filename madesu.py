@@ -19,11 +19,11 @@ tebak_sessions = {}  # chat_id -> {"angka": int, "tebakan_per_user": {uid: count
 # KONTEN
 # =====================
 jawaban = [
-    "iyah", "g", "gak", "mungkin", "pasti", "100%", "impossible", "tidak akan",
+    "iyah", "g", "gak", "mungkin", "pasti", "100%", "impossible", "tidak akan", "tanya kuda",
     "waduh ini sulit, ak nyerah", "bisa jadi", "kayaknya iya", "gatau",
     "gay", "1000000%", "37% iya", "berdoa saja", "omaigot, pertanyaan macam apa ini",
     "omaigot", "😱", "i hate u", "stop asking", "bntar, cape.. satu2 guys",
-    "ewh", "serius nanya ini?", "iya dong",
+    "ewh", "serius nanya ini?", "iya dong", "JELAS IYA",
     "gak lah, pake nanya", "nyawit ni orang", "stoooop", "kamu nanya?",
     "km nanyea?", "aah ah ahhh..", "🤤🤤🤤", "hehe, ga", "*ngangguk", "jangan sekarang",
 ]
@@ -53,7 +53,7 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_text = (
         "👋 Halo! Aku **Madesu Bot**.\n\n"
         "Ketik /help untuk melihat semua perintah yang tersedia.\n"
-        "Selamat bersenang-senang! 🎉"
+        "Selamat mengisi kegabutan yhh"
     )
     await update.message.reply_text(welcome_text, parse_mode="Markdown")
 
@@ -61,18 +61,15 @@ async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Menampilkan daftar perintah"""
     help_text = (
         "📋 *Daftar Perintah Madesu Bot*\n\n"
-        "/start - Menyapa bot\n"
-        "/help - Menampilkan bantuan ini\n\n"
+        "/start - Mulai bot"
+        "/help - Menampilkan daftar perintah"
         "🎲 *Permainan & Hiburan*\n"
-        "/apa [pertanyaan] - Jawab pertanyaan ya/tidak/mungkin\n"
+        "/apa [pertanyaan] - Tanya apapun dengan pertanyaan berawalan apa "
         "/siapa [pertanyaan] - Pilih anggota grup secara acak\n"
-        "/berapa [pertanyaan] - Angka acak 0-100 (tambahkan 'persen' untuk %)\n"
+        "/berapa [pertanyaan] - Tanya apapun dengan pertanyaan berawalan berapa"
         "/jodoh - Pasangkan dua anggota grup secara acak\n"
         "/tebakangka - Mulai game tebak angka (0-100)\n"
-        "/stoptebakangka - Hentikan game tebak angka\n\n"
-        "💡 *Tips*:\n"
-        "- Saat game tebak angka aktif, cukup kirim angka saja.\n"
-        "- Bot akan otomatis merekam anggota yang pernah chat di grup."
+        "/stoptebakangka - Hentikan game tebak angka\n"
     )
     await update.message.reply_text(help_text, parse_mode="Markdown")
 
@@ -187,8 +184,7 @@ async def welcome_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE)
         mention = get_mention(new_member)
         welcome_msg = (
             f"✨ Selamat datang {mention} di grup! ✨\n\n"
-            "Aku **Madesu Bot** 🤖\n"
-            "Ketik /help untuk lihat perintah seru yang bisa kamu coba!"
+            "Aku **Madesu Bot** 🤖, Salken yhh \n"
         )
         await update.message.reply_text(welcome_msg, parse_mode="HTML")
         # Tambahkan ke daftar member grup
